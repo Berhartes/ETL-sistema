@@ -1,0 +1,107 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ❌ REGRA PERIGOSA REMOVIDA - Esta regra permitia acesso total
+    // ❌ match /{document=**} { allow read, write: if true; }
+    // 
+    // ✅ REGRAS SEGURAS IMPLEMENTADAS ABAIXO
+    // Apenas leitura pública para dados de transparência
+    // Escritas APENAS via Firebase Admin SDK (ETL)
+
+    // Regras para produção
+    // ✅ DADOS DE TRANSPARÊNCIA PÚBLICA - APENAS LEITURA
+    // Escritas são feitas APENAS via Firebase Admin SDK no ETL
+    
+    match /congressoNacional/{document=**} {
+      allow read: if true;
+      allow write: if false; // ✅ Escritas BLOQUEADAS do lado cliente
+    }
+
+    match /senadores/{document=**} {
+      allow read: if true;
+      allow write: if false; // ✅ Escritas BLOQUEADAS do lado cliente
+    }
+
+    match /legislaturas/{document=**} {
+      allow read: if true;
+      allow write: if false; // ✅ Escritas BLOQUEADAS do lado cliente
+    }
+
+    match /votacoes/{document=**} {
+      allow read: if true;
+      allow write: if false; // ✅ Escritas BLOQUEADAS do lado cliente
+    }
+
+    match /perfilfornecedores/{document=**} {
+      allow read: if true;
+      allow write: if false; // ✅ Escritas BLOQUEADAS do lado cliente
+    }
+
+    // 🏛️ DADOS PRINCIPAIS DE TRANSPARÊNCIA
+    match /despesas/{document=**} {
+      allow read: if true;
+      allow write: if false; // ✅ ESCRITAS APENAS VIA ETL/ADMIN SDK
+    }
+
+    match /rankings/{document=**} {
+      allow read: if true;
+      allow write: if false; // ✅ ESCRITAS APENAS VIA ETL/ADMIN SDK
+    }
+
+    match /alertas/{document=**} {
+      allow read: if true;
+      allow write: if false; // ✅ ESCRITAS APENAS VIA ETL/ADMIN SDK
+    }
+
+    match /estatisticas/{document=**} {
+      allow read: if true;
+      allow write: if false; // ✅ ESCRITAS APENAS VIA ETL/ADMIN SDK
+    }
+
+    match /indices/{document=**} {
+      allow read: if true;
+      allow write: if false; // ✅ ESCRITAS APENAS VIA ETL/ADMIN SDK
+    }
+
+    match /metadados/{document=**} {
+      allow read: if true;
+      allow write: if false; // ✅ ESCRITAS APENAS VIA ETL/ADMIN SDK
+    }
+
+    match /transacoes/{document=**} {
+      allow read: if true;
+      allow write: if false; // ✅ ESCRITAS APENAS VIA ETL/ADMIN SDK
+    }
+
+    match /fornecedores/{document=**} {
+      allow read: if true;
+      allow write: if false; // ✅ ESCRITAS APENAS VIA ETL/ADMIN SDK
+    }
+
+    match /deputados/{document=**} {
+      allow read: if true;
+      allow write: if false; // ✅ ESCRITAS APENAS VIA ETL/ADMIN SDK
+    }
+
+    // 📊 ETL COLLECTIONS - Admin SDK access only
+    match /etl_sessions/{document=**} {
+      allow read: if true;
+      allow write: if false; // ✅ ESCRITAS APENAS VIA ETL/ADMIN SDK
+    }
+    
+    match /etl_stats/{document=**} {
+      allow read: if true;
+      allow write: if false; // ✅ ESCRITAS APENAS VIA ETL/ADMIN SDK
+    }
+
+    match /test/{document=**} {
+      allow read, write: if true; // 🧪 TEMPORÁRIO - para testar Admin SDK
+    }
+
+    // 🛡️ REGRA PADRÃO SEGURA - NEGA TODO ACESSO NÃO ESPECIFICADO
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

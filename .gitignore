@@ -1,0 +1,75 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+
+# Build directories
+dist/
+build/
+
+# Data files that might be sensitive
+dados_processados/*.json
+dados_processados/*.csv
+dados_processados/*.xlsx
+
+# Archive files
+archived/
+
+# Service account keys and other secrets
+config/serviceAccountKey.json
+**/serviceAccountKey.json
+*.key
+*.pem
+
+# Test coverage
+coverage/

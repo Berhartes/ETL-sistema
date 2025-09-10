@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-09-09T20:18:00.167Z",
+  "legislatura": "57",
+  "resumo": {
+    "totalDeputados": 10,
+    "totalDespesas": 10290,
+    "valorTotal": 10416744.78999999
+  },
+  "topDeputados": [
+    {
+      "nome": "Adail Filho",
+      "valorTotal": 1539501.6700000006,
+      "totalDespesas": 588
+    },
+    {
+      "nome": "Acácio Favacho",
+      "valorTotal": 1459745.6299999987,
+      "totalDespesas": 882
+    },
+    {
+      "nome": "Afonso Hamm",
+      "valorTotal": 1424914.3500000038,
+      "totalDespesas": 2498
+    },
+    {
+      "nome": "Adilson Barroso",
+      "valorTotal": 1318075.1299999994,
+      "totalDespesas": 1360
+    },
+    {
+      "nome": "Adriano do Baldy",
+      "valorTotal": 1278967.2599999893,
+      "totalDespesas": 1502
+    },
+    {
+      "nome": "Aécio Neves",
+      "valorTotal": 1237757.8899999973,
+      "totalDespesas": 992
+    },
+    {
+      "nome": "Adolfo Viana",
+      "valorTotal": 1111247.2300000002,
+      "totalDespesas": 564
+    },
+    {
+      "nome": "Abilio Brunini",
+      "valorTotal": 855729.7799999994,
+      "totalDespesas": 1063
+    },
+    {
+      "nome": "Adriana Ventura",
+      "valorTotal": 181673.88000000006,
+      "totalDespesas": 833
+    },
+    {
+      "nome": "Afonso Florence",
+      "valorTotal": 9131.97,
+      "totalDespesas": 8
+    }
+  ],
+  "gastosPorPartido": [
+    {
+      "partido": "SEM PARTIDO",
+      "valor": 10416744.78999999
+    }
+  ],
+  "gastosPorUF": [
+    {
+      "uf": "SEM UF",
+      "valor": 10416744.78999999
+    }
+  ],
+  "status": "processado-offline"
+}

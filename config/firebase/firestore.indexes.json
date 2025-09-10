@@ -1,0 +1,55 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "deputados",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "siglaUf", "order": "ASCENDING" },
+        { "fieldPath": "siglaPartido", "order": "ASCENDING" },
+        { "fieldPath": "scoreInvestigativo", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "despesas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "deputadoId", "order": "ASCENDING" },
+        { "fieldPath": "anoMes", "order": "DESCENDING" },
+        { "fieldPath": "dataDocumento", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "despesas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "fornecedorCnpj", "order": "ASCENDING" },
+        { "fieldPath": "valorLiquido", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "despesas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "tipoDespesa", "order": "ASCENDING" },
+        { "fieldPath": "valorLiquido", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "despesas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "ufDeputado", "order": "ASCENDING" },
+        { "fieldPath": "valorLiquido", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "fornecedores",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "categoriaRisco", "order": "ASCENDING" },
+        { "fieldPath": "scoreInvestigativo", "order": "DESCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

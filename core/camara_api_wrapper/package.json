@@ -1,0 +1,55 @@
+{
+  "name": "camara-api-wrapper",
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Sistema ETL Modular para APIs da Câmara dos Deputados e Senado Federal",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p .",
+    "lint": "eslint . --ext .ts",
+    "test-api-camara": "ts-node -P tsconfig.scripts.json scripts/teste-api-camara.ts",
+    "camara:perfil": "ts-node -P tsconfig.scripts.json scripts/initiators/processar_perfildeputados_v2.ts",
+    "camara:despesas": "ts-node -P tsconfig.scripts.json scripts/initiators/processar_despesasdeputados_v2.ts",
+    "camara:discursos": "ts-node -P tsconfig.scripts.json scripts/initiators/processar_discursosdeputados_v2.ts",
+    "camara:frentes": "ts-node -P tsconfig.scripts.json scripts/processar_frentes_v2.ts",
+    "camara:blocos": "ts-node -P tsconfig.scripts.json scripts/processar_blocos_v2.ts",
+    "camara:orgaos": "ts-node -P tsconfig.scripts.json scripts/initiators/processar_orgaos_v2.ts",
+    "camara:partidos": "ts-node -P tsconfig.scripts.json scripts/initiators/processar_partidos_v2.ts",
+    "camara:legislaturas": "ts-node -P tsconfig.scripts.json scripts/initiators/processar_legislatura_v2.ts",
+    "camara:perfil:teste": "npm run camara:perfil -- --dry-run --limite 2 --verbose",
+    "camara:perfil:rapido": "npm run camara:perfil -- --pc --limite 5 --verbose",
+    "camara:perfil:deputado": "npm run camara:perfil -- --deputado",
+    "camara:frentes:teste": "npm run camara:frentes -- --dry-run --limite 2 --verbose",
+    "camara:frentes:rapido": "npm run camara:frentes -- --pc --limite 5 --verbose",
+    "camara:blocos:teste": "npm run camara:blocos -- --dry-run --limite 2 --verbose",
+    "camara:blocos:rapido": "npm run camara:blocos -- --pc --limite 5 --verbose"
+  },
+  "keywords": [
+    "senado",
+    "camara",
+    "deputados",
+    "etl",
+    "api",
+    "wrapper",
+    "dados abertos",
+    "brasil",
+    "modular",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "dotenv": "^16.5.0",
+    "firebase-admin": "^13.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@typescript-eslint/parser": "^7.9.0",
+    "eslint": "^8.57.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

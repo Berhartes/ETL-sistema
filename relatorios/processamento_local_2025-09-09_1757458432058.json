@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-09-09T22:53:52.058Z",
+  "metodo": "local",
+  "motivo": "connectividade_offline",
+  "dados": {
+    "totalDeputados": 1,
+    "totalDespesas": 1063,
+    "valorTotal": 855729.7799999994
+  },
+  "conectividade": {
+    "quality": "offline",
+    "config": null,
+    "metrics": {
+      "connectivity": false
+    },
+    "strategy": "offline",
+    "recommendation": "Usar processamento local - Firestore indisponível"
+  }
+}

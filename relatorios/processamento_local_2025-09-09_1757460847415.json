@@ -1,0 +1,11 @@
+{
+  "timestamp": "2025-09-09T23:34:07.415Z",
+  "metodo": "local",
+  "motivo": "connectividade_unknown",
+  "dados": {
+    "totalDeputados": 1,
+    "totalDespesas": 1063,
+    "valorTotal": 855729.7799999994
+  },
+  "conectividade": null
+}

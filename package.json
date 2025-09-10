@@ -1,0 +1,61 @@
+{
+  "name": "sistema-etl-camara-deputados",
+  "version": "1.0.0",
+  "description": "Sistema ETL independente para processamento de dados da Câmara dos Deputados com integração Firebase/Firestore",
+  "type": "module",
+  "main": "etl-despesas-real.js",
+  "scripts": {
+    "etl:despesas": "node etl-despesas-real.js",
+    "etl:inteligente": "node etl-inteligente.js",
+    "etl:firestore": "node etl-firestore-integration.js",
+    "build": "tsc -p core/camara_api_wrapper/tsconfig.json",
+    "build:etl": "tsc -p tsconfig.etl.json",
+    "test:connectivity": "node tests/test-connectivity.js",
+    "test:firebase": "node tests/test-firebase-admin.js",
+    "test:dns": "node tests/test-dns.js",
+    "camara:despesas": "node core/camara_api_wrapper/scripts/initiators/processar_despesasdeputados_v3.js",
+    "camara:partidos": "node core/camara_api_wrapper/scripts/initiators/processar_partidos_v2.js",
+    "camara:orgaos": "node core/camara_api_wrapper/scripts/initiators/processar_orgaos_v2.js",
+    "camara:legislaturas": "node core/camara_api_wrapper/scripts/initiators/processar_legislatura_v2.js",
+    "camara:dev:despesas": "ts-node core/camara_api_wrapper/scripts/initiators/processar_despesasdeputados_v3.ts",
+    "camara:dev:partidos": "ts-node core/camara_api_wrapper/scripts/initiators/processar_partidos_v2.ts",
+    "camara:dev:orgaos": "ts-node core/camara_api_wrapper/scripts/initiators/processar_orgaos_v2.ts",
+    "camara:dev:legislaturas": "ts-node core/camara_api_wrapper/scripts/initiators/processar_legislatura_v2.ts",
+    "security:audit": "node scripts/security-continuous-audit.js",
+    "lint": "eslint . --ext ts,js --report-unused-disable-directives --max-warnings 0"
+  },
+  "keywords": [
+    "etl",
+    "camara-deputados",
+    "firebase",
+    "firestore",
+    "dados-abertos",
+    "transparencia",
+    "parlamentar"
+  ],
+  "author": "Sistema ETL Transparência",
+  "license": "MIT",
+  "dependencies": {
+    "@gannonh/firebase-mcp": "^1.0.0",
+    "@types/yargs": "^17.0.33",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "firebase-admin": "^12.0.0",
+    "https": "^1.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.0",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "eslint": "^9.0.0",
+    "rimraf": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "sistema-etl-camara-deputados"
+  }
+}
